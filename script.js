@@ -28,6 +28,7 @@ let budgetBuddyDataBase = {
 
   expenses: [],
 };
+
 const updateRemainingBalance = () => {
   const budgetInput = document.querySelector("#budget").value;
   budgetBuddyDataBase.budget = parseFloat(budgetInput);
@@ -64,6 +65,7 @@ const createTable = () => {
     newItem.append(description, category, amount, deleteButton);
   });
 };
+
 // ask about appending button to td
 const updateExpensesTable = () => {
   balanceLeft.textContent = `$${budgetBuddyDataBase.remainingBalance}`;
@@ -73,6 +75,7 @@ const updateExpensesTable = () => {
   entertainment.textContent = `$${budgetBuddyDataBase.entertainment}`;
   food.textContent = `$${budgetBuddyDataBase.food}`;
 };
+
 expenseForm.addEventListener("submit", (e) => {
   e.preventDefault();
   let description = document.querySelector("#item-description").value;
@@ -85,10 +88,9 @@ expenseForm.addEventListener("submit", (e) => {
   });
   budgetBuddyDataBase.total += amount;
   budgetBuddyDataBase[category] += amount;
-
   budgetBuddyDataBase.remainingBalance =
     budgetBuddyDataBase.budget - budgetBuddyDataBase.total;
-  console.log(budgetBuddyDataBase);
+
   if (budgetBuddyDataBase.remainingBalance < 0) {
     alert("You have exceeded your budget");
   }
