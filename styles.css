@@ -1,0 +1,116 @@
+/* resets */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  font-family: "Londrina Solid", cursive;
+}
+
+.main {
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.page-title {
+  margin: 5px 0;
+}
+
+.clear {
+  height: 20px;
+  background-color: black;
+  color: white;
+  border-radius: 7.5px;
+}
+
+.delete {
+  height: 20px;
+  background-color: black;
+  color: white;
+  border-radius: 7.5px;
+}
+
+button {
+  font-family: "Quicksand", sans-serif;
+}
+
+input:placeholder-shown {
+  font-family: "Quicksand", sans-serif;
+}
+
+#category {
+  font-family: "Quicksand", sans-serif;
+  flex: 1;
+  margin: 6px 3px 6px 0px;
+}
+
+#amount {
+  flex: 1;
+  margin: 6px 0px 6px 3px;
+  font-family: "Quicksand", sans-serif;
+}
+
+.budget-balance-container {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.budget-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100;
+  align-items: center;
+}
+.update-balance-button {
+  width: 100%;
+}
+
+.item-description-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.bill-amount-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.items-table {
+  border-collapse: collapse;
+  border-spacing: 25%;
+  margin: 0;
+  table-layout: fixed;
+  column-width: 700px;
+  width: 100%;
+}
+
+.item-header {
+  border: 1px solid black;
+}
+
+.table-datum {
+  border: 1px solid black;
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    position: relative;
+  }
+
+  .item-description-form-container {
+    position: absolute;
+    /* z-index: 2; */
+    left: 200px;
+    top: 72px;
+  }
+}
