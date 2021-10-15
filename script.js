@@ -31,11 +31,17 @@ let budgetBuddyDataBase = {
 
 const updateRemainingBalance = () => {
   const budgetInput = document.querySelector("#budget").value;
-  budgetBuddyDataBase.budget = parseFloat(budgetInput);
+  budgetBuddyDataBase.budget = Number(budgetInput);
+  budgetBuddyDataBase.budget =
+    Math.round(budgetBuddyDataBase.budget * 100) / 100;
+
   budgetBuddyDataBase.remainingBalance =
-    parseFloat(budgetInput) - budgetBuddyDataBase.total;
+    Number(budgetInput) - budgetBuddyDataBase.total;
+  budgetBuddyDataBase.remainingBalance =
+    Math.round(budgetBuddyDataBase.remainingBalance * 100) / 100;
   balanceLeft.textContent = `$${budgetBuddyDataBase.remainingBalance}`;
 };
+
 budgetForm.addEventListener("submit", (e) => {
   e.preventDefault();
   updateRemainingBalance();
@@ -80,16 +86,22 @@ expenseForm.addEventListener("submit", (e) => {
   e.preventDefault();
   let description = document.querySelector("#item-description").value;
   let category = document.querySelector("#category").value;
-  let amount = parseFloat(document.querySelector("#amount").value);
+  let amount = Number(document.querySelector("#amount").value);
+  console.log(amount);
   budgetBuddyDataBase.expenses.push({
     description,
     category,
     amount,
   });
   budgetBuddyDataBase.total += amount;
+  budgetBuddyDataBase.total = Math.round(budgetBuddyDataBase.total * 100) / 100;
   budgetBuddyDataBase[category] += amount;
+  budgetBuddyDataBase[category] =
+    Math.round(budgetBuddyDataBase[category] * 100) / 100;
   budgetBuddyDataBase.remainingBalance =
     budgetBuddyDataBase.budget - budgetBuddyDataBase.total;
+  budgetBuddyDataBase.remainingBalance =
+    Math.round(budgetBuddyDataBase.remainingBalance * 100) / 100;
 
   if (budgetBuddyDataBase.remainingBalance < 0) {
     alert("You have exceeded your budget");
@@ -105,7 +117,11 @@ itemsTable.addEventListener("click", (e) => {
     let amount = budgetBuddyDataBase.expenses[index].amount;
     let category = budgetBuddyDataBase.expenses[index].category;
     budgetBuddyDataBase.total -= amount;
+    budgetBuddyDataBase.total =
+      Math.round(budgetBuddyDataBase.total * 100) / 100;
     budgetBuddyDataBase[category] -= amount;
+    budgetBuddyDataBase[category] =
+      Math.round(budgetBuddyDataBase[category] * 100) / 100;
     budgetBuddyDataBase.expenses.splice(index, 1);
 
     updateExpensesTable();
