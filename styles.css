@@ -102,6 +102,15 @@ input:placeholder-shown {
   border: 1px solid black;
 }
 
+.inactive {
+  color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+input[type="text"]:disabled {
+  color: rgba(0, 0, 0, 0.5);
+}
+
 @media screen and (min-width: 768px) {
   .main {
     position: relative;
@@ -109,7 +118,6 @@ input:placeholder-shown {
 
   .item-description-form-container {
     position: absolute;
-    /* z-index: 2; */
     left: 200px;
     top: 72px;
   }

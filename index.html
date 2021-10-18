@@ -30,7 +30,13 @@
       <section class="budget-balance-container">
         <form class="budget-form">
           <label for="budget" name="budget">Budget</label>
-          <input type="text" placeholder="Budget" name="budget" id="budget" />
+          <input
+            type="text"
+            placeholder="Budget"
+            name="budget"
+            id="budget"
+            autocomplete="off"
+          />
           <button class="update-balance-button">Update Balance</button>
         </form>
         <table>
@@ -63,6 +69,8 @@
       <section class="item-description-form-container">
         <form class="item-description-form">
           <input
+            class="item-description-form-element"
+            disabled="disabled"
             type="text"
             placeholder="Item Description"
             name="item-description"
@@ -70,13 +78,20 @@
           />
 
           <div class="bill-amount-container">
-            <select name="category" id="category">
+            <select
+              name="category"
+              id="category"
+              disabled="disabled"
+              class="item-description-form-element"
+            >
               <option value="bills">Bills</option>
               <option value="clothing">Clothing</option>
               <option value="entertainment">Entertainment</option>
               <option value="food">Food</option>
             </select>
             <input
+              class="item-description-form-element"
+              disabled="disabled"
               type="number"
               placeholder="Amount ($)"
               step="0.01"
@@ -84,7 +99,9 @@
               id="amount"
             />
           </div>
-          <button>Add Item</button>
+          <button class="item-description-form-element" disabled="disabled">
+            Add Item
+          </button>
         </form>
       </section>
       <table class="items-table">

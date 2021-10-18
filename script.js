@@ -45,6 +45,14 @@ const updateRemainingBalance = () => {
 budgetForm.addEventListener("submit", (e) => {
   e.preventDefault();
   updateRemainingBalance();
+  document.getElementById("budget").disabled = true;
+  document.querySelector(".update-balance-button").classList.add("inactive");
+  document
+    .querySelectorAll(".item-description-form-element")
+    .forEach((item) => {
+      item.disabled = false;
+    });
+  e.target.classList.add("inactive");
 });
 
 const createTable = () => {
