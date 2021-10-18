@@ -2,6 +2,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #80b1a5;
 }
 
 .header {
@@ -11,6 +12,16 @@ body {
   padding: 10px;
   align-items: center;
   font-family: "Londrina Solid", cursive;
+  background-color: #41ab8f;
+}
+
+.title-logo-container {
+  display: flex;
+}
+
+.logo {
+  height: 48px;
+  padding-left: 10px;
 }
 
 .main {
@@ -25,20 +36,17 @@ body {
 
 .clear {
   height: 20px;
-  background-color: black;
-  color: white;
-  border-radius: 7.5px;
 }
 
 .delete {
   height: 20px;
-  background-color: black;
-  color: white;
-  border-radius: 7.5px;
 }
 
 button {
   font-family: "Quicksand", sans-serif;
+  color: white;
+  background-color: #316257;
+  border-radius: 7.5px;
 }
 
 input:placeholder-shown {
