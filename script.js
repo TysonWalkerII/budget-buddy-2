@@ -66,7 +66,7 @@ const createTable = () => {
     deleteButton.textContent = "Delete";
     description.textContent = expense.description;
     category.textContent = expense.category;
-    amount.textContent = `$${expense.amount}`;
+    amount.textContent = `${expense.amount}`;
     itemsTable.append(newItem);
     newItem.append(description, category, amount, deleteButton);
   });

@@ -2,10 +2,11 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #cad2c5;
 }
 
 .header {
-  background-color: lightgray;
+  background-color: #e9f5db;
   display: flex;
   justify-content: space-between;
   padding: 10px;
@@ -25,8 +26,9 @@ body {
 
 .clear {
   height: 20px;
-  background-color: black;
-  color: white;
+  background-color: darkgreen;
+  color: black;
+
   border-radius: 7.5px;
 }
 
@@ -72,12 +74,21 @@ input:placeholder-shown {
 }
 .update-balance-button {
   width: 100%;
+  color: white;
+  background-color: black;
+  border-radius: 7.5px;
 }
 
 .item-description-form {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+}
+
+.add-item-button {
+  color: white;
+  background-color: black;
+  border-radius: 7.5px;
 }
 
 .bill-amount-container {
